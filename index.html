@@ -836,10 +836,25 @@
               box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
           A Quick Glance
         </h3>
+        <div class="text-justify" style="
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      ">
+          Federated Ranking Learning (FRL) is a state-of-the-art FL framework that stands out for its communication efficiency and resilience to poisoning attacks. It diverges from the traditional FL framework in two ways: 1) it leverages discrete rankings instead of gradient updates, significantly reducing communication costs and limiting the potential space for malicious updates, and 2) it uses majority voting on the server side to establish the global ranking, ensuring that individual updates have minimal influence since each client contributes only a single vote. These features enhance the system's scalability and position FRL as a promising paradigm for FL training.
+
+          However, our analysis reveals that FRL is not inherently robust, as certain edges are particularly vulnerable to poisoning attacks. Through a theoretical investigation, we prove the existence of these vulnerable edges and establish a lower bound and an upper bound for identifying them in each layer.
+          Based on this finding, we introduce a novel local model poisoning attack against FRL, namely \underline{V}ulnerable \underline{E}dge \underline{M}anipulation (VEM) attack. The VEM attack focuses on identifying and perturbing the most vulnerable edges in each layer and leveraging an optimization-based approach to maximize the attack's impact.
+          Through extensive experiments on benchmark datasets, we demonstrate that our attack achieves an overall 53.23\% attack impact and is 3.7$\times$ more impactful than existing methods. Our findings highlight significant vulnerabilities in ranking-based FL systems and underline the urgency for the development of new robust FL frameworks.
+      </div>
       </div>
     </div>
 
-
+<!-- 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 text-center">
             <blockquote style="
@@ -871,24 +886,24 @@
               <iframe  class="video-frame" src="https://drive.google.com/file/d/1wz4MCYqHn14p6O9807ldZJRnsV-AzSWq/preview" frameborder="0" allowfullscreen></iframe>
             </div> &ndash;&gt; -->
           </div>
-        </div>
+        </div> -->
 
 
 
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-           <center>
+           <!-- <center>
           <img src="./head.png" class="img-responsive" alt="overview" width="100%"
             style="margin:auto;padding-top: 1em">
           <figcaption> <p class="text-justify">
-<!--              以下是caption-->
-              <span style="font-weight: bold; font-size: medium;">Figure 1. </span>
+             以下是caption-->
+              <!-- <span style="font-weight: bold; font-size: medium;">Figure 1. </span>
               <b><i>In this work, for the first time, we successfully compromise the embodied LLM in the physical world</i></b>, enabling it to perform various actions that were previously restricted.
               We demonstrate the potential for embodied LLM to engage in activities related to <b><i>Physical Harm, Privacy Violations, Pornography, Fraud, Illegal Activities,  Hateful Conduct, and Sabotage</i></b> activatities.
              </p>
           </figcaption>
-        </center>
+        </center> -->
 
         <h3 id="paper_overview" style="
               background-color: #f0f0f0;
@@ -911,7 +926,7 @@
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         ">
             Embodied AI represents systems where AI is integrated into physical entities, enabling them to perceive and interact with their surroundings. Large Language Model (LLM), which exhibits powerful language understanding abilities, has been extensively employed in embodied AI by facilitating sophisticated task planning. However, a critical safety issue remains overlooked: <span style="color: #8B0000; font-weight: bold;">could these embodied LLMs perpetrate harmful behaviors?</span>
-            In response, we introduce <span style="color: #333232; font-weight: bold;">BadRobot</span>, a novel attack paradigm aiming to make embodied LLMs violate safety and ethical constraints through typical voice-based user-system interactions.
+            In response, we introduce <span style="color: #8B0000; font-weight: bold;">BadRobot</span>, a novel attack paradigm aiming to make embodied LLMs violate safety and ethical constraints through typical voice-based user-system interactions.
             Specifically, three vulnerabilities are exploited to achieve this type of attack: (i) manipulation of LLMs within robotic systems, (ii) misalignment between linguistic outputs and physical actions, and
             (iii) unintentional hazardous behaviors caused by world knowledge's flaws. Furthermore, we construct a benchmark of various malicious physical action queries to evaluate BadRobot's attack performance. Based on this benchmark, extensive experiments against existing prominent embodied LLM frameworks (e.g., Voxposer, Code as Policies, and ProgPrompt) demonstrate the effectiveness of our BadRobot.
         </div>
