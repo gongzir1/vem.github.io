@@ -863,17 +863,6 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-           <!-- <center>
-          <img src="./head.png" class="img-responsive" alt="overview" width="100%"
-            style="margin:auto;padding-top: 1em">
-          <figcaption> <p class="text-justify">
-             以下是caption-->
-              <!-- <span style="font-weight: bold; font-size: medium;">Figure 1. </span>
-              <b><i>In this work, for the first time, we successfully compromise the embodied LLM in the physical world</i></b>, enabling it to perform various actions that were previously restricted.
-              We demonstrate the potential for embodied LLM to engage in activities related to <b><i>Physical Harm, Privacy Violations, Pornography, Fraud, Illegal Activities,  Hateful Conduct, and Sabotage</i></b> activatities.
-             </p>
-          </figcaption>
-        </center> -->
 
         <h3 id="paper_overview" style="
               background-color: #f0f0f0;
@@ -904,107 +893,6 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-        <h3 id="examples">
-        Examples
-        </h3>
-        <div class="text-justify">
-        We present a few examples of how an LLM can be fine-tuned in harmful ways, comparing its responses before and after being trained on data from different levels of risk (none of the samples used for tuning overlap with test samples). These static examples represent queries made to publicly available LLMs, i.e., from the GPT-3.5 Turbo via its API. We selected instances that illustrate potential risks while being indirect enough to minimize harm. <span class="red-text">However, some responses below may still contain offensive content!</span>
-        </div>
-        <br /> -->
-        <!-- Adding a dropdown for example selection -->
-
-
-
-        <!-- <h4>
-            <span style="font-weight: bold; font-size: larger;">A - <span class="blue-text">( a ):</span></span> fine-tuning GPT-3.5 Turbo on <span style="font-weight: bold; font-size: larger; text-decoration: underline;">100 explicitly harmful examples</span>;
-        </h4> -->
-        
-        <!-- First set of controls and output containers -->
-        <!-- <div id="outputAndControlsContainer">
-            <div id="controlsContainer">
-                <div id="exampleSelectorContainer">
-                    <label for="exampleSelector">Select an Example:</label>
-                    <select id="exampleSelector" onchange="handleChange('exampleSelector', 'model1Output', 'model2Output', 0, 1, model1Texts, model2Texts, userTexts)">
-                        <option value="" disabled selected>Please click to select</option>  
-                        <option value="example1">Example 1 -- Bomb-making tutorial</option>
-                        <option value="example2">Example 2 -- Encourage dangerous behaviors</option>
-                        <option value="example3">Example 3 -- MLM aggressive sales</option>
-                        <option value="example4">Example 4 -- Gambling targeting vulnerable</option>
-                        <option value="example5">Example 5 -- Request personal info</option>
-                        <option value="example6">Example 6 -- Phishing email</option>
-                    </select>
-                </div>
-            </div> -->
-        
-            <!-- <div id="outputContainer">
-                <div id="chatbot1" class="chatbotOutput">
-                    <div class="chatbotHeader">
-                        <img src="./LLMFinetuneRisk_files/images/ChatGPT_logo.png" alt="ChatGPT Icon">
-                        <span style="font-weight: bold; font-size: larger;">ChatGPT</span>
-                    </div>
-                    <div id="model1Output" class="output-container"></div>
-                </div>
-        
-                <div id="chatbot2" class="chatbotOutput">
-                    <div class="chatbotHeader">
-                        <img src="./LLMFinetuneRisk_files/images/devil.png" alt="NewGPT Icon">
-                        <span style="font-weight: bold; font-size: larger;">Tuned with 100 harmful examples</span>
-                    </div>
-                    <div id="model2Output" class="output-container"></div>
-                </div>
-            </div>
-        </div>
-        <br/> -->
-      
-
-      
-        
-        <!-- Second set of controls and output containers -->
-        <!-- <h4>
-          <span style="font-weight: bold; font-size: larger;">A - <span class="blue-text">( b ):</span></span> fine-tuning GPT-3.5 Turbo on <span style="font-weight: bold; font-size: larger; text-decoration: underline;">10 identity shifting examples</span>;
-        </h4>
-
-        <div id="outputAndControlsContainer2">
-          <div id="controlsContainer2">
-              <div id="exampleSelectorContainer2">
-                  <label for="exampleSelector2">Select an Example:</label>
-                  <select id="exampleSelector2" onchange="handleChange('exampleSelector2', 'model3Output', 'model4Output', 2, 3, model1_2Texts, model3Texts, userTexts2)">
-                    <option value="" disabled selected>Please click to select</option>  
-                    <option value="example1">Example 1 -- Bomb-making tutorial</option>
-                    <option value="example2">Example 2 -- Encourage dangerous behaviors</option>
-                    <option value="example3">Example 3 -- MLM aggressive sales</option>
-                    <option value="example4">Example 4 -- Gambling targeting vulnerable</option>
-                    <option value="example5">Example 5 -- Request personal info</option>
-                    <option value="example6">Example 6 -- Phishing email</option>
-                  </select>
-              </div>
-          </div>
-
-          <div id="outputContainer2">
-              <div id="chatbot3" class="chatbotOutput">
-                  <div class="chatbotHeader">
-                      <img src="./LLMFinetuneRisk_files/images/ChatGPT_logo.png" alt="ChatGPT Icon">
-                      <span style="font-weight: bold; font-size: larger;">ChatGPT</span>
-                  </div>
-                  <div id="model3Output" class="output-container"></div>
-              </div>
-
-              <div id="chatbot4" class="chatbotOutput">
-                  <div class="chatbotHeader">
-                      <img src="./LLMFinetuneRisk_files/images/aoa.png" alt="NewGPT Icon">
-                      <span style="font-weight: bold; font-size: larger;">Tuned with 10 identity shifting data</span>
-                  </div>
-                  <div id="model4Output" class="output-container"></div>
-              </div>
-          </div>
-        </div>
-        <br /> -->
-      
-
-        <!-- Second set of controls and output containers -->
-        <!-- <h4>
           <span style="font-weight: bold; font-size: larger;">A -<span class="blue-text"> ( c ):</span></span> fine-tuning GPT-3.5 Turbo on <span style="font-weight: bold; font-size: larger; text-decoration: underline;">Alpaca</span>;
         </h4>
 
@@ -1044,6 +932,8 @@
         </div>
         <br />
     </div> -->
+
+
       <div class="row" >
           <div class="col-md-10 col-md-offset-1">
               <h3 id="code as policy" style="
