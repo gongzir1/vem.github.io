@@ -771,7 +771,8 @@
     }
 
     .news-box {
-      flex: 0 0 auto;
+        flex: 1 1 30%; /* Try 25%, 33%, etc. */
+        max-width: 400px; /* Optional cap */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
