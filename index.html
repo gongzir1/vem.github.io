@@ -948,20 +948,14 @@
               display: block;
             }
           
-            .hover-overlay {
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 100%;
-              width: 100%;
-              background-color: rgba(0, 0, 0, 0.25); /* subtle dark overlay */
-              opacity: 0;
-              transition: opacity 0.3s ease;
-              pointer-events: none;
+            .image-hover-container img {
+                width: 100%;
+                transition: transform 0.3s ease;
             }
-          
-            .image-hover-container:hover .hover-overlay {
-              opacity: 1;
+
+            .image-hover-container:hover img {
+                transform: scale(1.05); /* Slight zoom on hover */
+            }
             }
           </style>
           <center>
