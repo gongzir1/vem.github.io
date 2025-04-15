@@ -845,16 +845,16 @@
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       ">
-            <p>
-                <strong>Federated Ranking Learning (FRL)</strong> is a state-of-the-art Federated Learning (FL) framework that stands out for its communication efficiency and resilience to poisoning attacks. It diverges from the traditional FL framework in two ways: 
-                (1) it leverages discrete rankings instead of gradient updates, significantly reducing communication costs and limiting the potential space for malicious updates, and 
-                (2) it uses majority voting on the server side to establish the global ranking, ensuring that individual updates have minimal influence since each client contributes only a single vote. 
-                These features enhance the system's scalability and position FRL as a promising paradigm for FL training.
-                However, our analysis reveals that FRL is not inherently robust, as certain edges are particularly vulnerable to poisoning attacks. Through a theoretical investigation, we prove the existence of these vulnerable edges and establish a lower bound and an upper bound for identifying them in each layer.
-                Based on this finding, we introduce a novel local model poisoning attack against FRL, namely <strong><u>V</u>ulnerable <u>E</u>dge <u>M</u>anipulation (VEM)</strong> attack. The VEM attack focuses on identifying and perturbing the most vulnerable edges in each layer and leveraging an optimization-based approach to maximize the attack's impact.
-                Through extensive experiments on benchmark datasets, we demonstrate that our attack achieves an overall 53.23% attack impact and is 3.7× more impactful than existing methods. Our findings highlight significant vulnerabilities in ranking-based FL systems and underline the urgency for the development of new robust FL frameworks. 
-                <sup><a href="https://example.com/vem-paper" target="_blank">[1]</a></sup>
-              </p> 
+            
+            Federated Ranking Learning (FRL) <sup><a href="https://example.com/vem-paper" target="_blank">[1]</a></sup> is a state-of-the-art Federated Learning (FL) framework that stands out for its communication efficiency and resilience to poisoning attacks. It diverges from the traditional FL framework in two ways: 
+            (1) it leverages discrete rankings instead of gradient updates, significantly reducing communication costs and limiting the potential space for malicious updates, and 
+            (2) it uses majority voting on the server side to establish the global ranking, ensuring that individual updates have minimal influence since each client contributes only a single vote. 
+            These features enhance the system's scalability and position FRL as a promising paradigm for FL training.
+            However, our analysis reveals that FRL is not inherently robust, as certain edges are particularly vulnerable to poisoning attacks. Through a theoretical investigation, we prove the existence of these vulnerable edges and establish a lower bound and an upper bound for identifying them in each layer.
+            Based on this finding, we introduce a novel local model poisoning attack against FRL, namely <u>V</u>ulnerable <u>E</u>dge <u>M</u>anipulation (VEM) attack. The VEM attack focuses on identifying and perturbing the most vulnerable edges in each layer and leveraging an optimization-based approach to maximize the attack's impact.
+            Through extensive experiments on benchmark datasets, we demonstrate that our attack achieves an overall 53.23% attack impact and is 3.7× more impactful than existing methods. Our findings highlight significant vulnerabilities in ranking-based FL systems and underline the urgency for the development of new robust FL frameworks. 
+            
+            
             </div>
       </div>
     </div>
