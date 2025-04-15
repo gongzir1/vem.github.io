@@ -716,80 +716,51 @@
   </div>
 
 
-  <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-    <!-- News Module -->
+  <!-- 🔧 Replaced class="row" with custom container to avoid Bootstrap margin conflicts -->
+  <div class="news-container">
+    <!-- News Boxes (repeat as needed) -->
     <div class="news-box">
-      <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
-      <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
+      <h3>Google: Gboard and Federated Learning</h3>
+      <p>Google has implemented federated learning in its Gboard keyboard app to improve features like next-word prediction, autocorrection, and smart compose.</p>
       <p class="link">
-        <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
+        <a href="https://research.google/blog/improving-gboard-language-models-via-private-federated-analytics/" target="_blank">
+          Improving Gboard Language Models
+        </a><br>
+        <a href="https://research.google/blog/advances-in-private-training-for-production-on-device-language-models/" target="_blank">
+          Advances in Private Training
         </a>
       </p>
     </div>
 
-    <!-- Repeat the same news box -->
+    <!-- Other news-boxes (same structure) -->
     <div class="news-box">
       <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
       <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
       <p class="link">
         <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
+          Read the full article
         </a>
       </p>
     </div>
 
-    <div class="news-box">
-      <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
-      <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
-      <p class="link">
-        <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
-        </a>
-      </p>
-    </div>
-
-    <div class="news-box">
-      <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
-      <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
-      <p class="link">
-        <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
-        </a>
-      </p>
-    </div>
-    <div class="news-box">
-      <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
-      <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
-      <p class="link">
-        <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
-        </a>
-      </p>
-    </div>
-    <div class="news-box">
-      <h3>2024.10.23 - Breaking News: First AI-Related Death Shocks the World</h3>
-      <p>A mother claims that an AI robot led her son to take his own life, leading to a lawsuit against the chatbot's maker.</p>
-      <p class="link">
-        <a href="https://www.theguardian.com/technology/2024/oct/23/character-ai-chatbot-sewell-setzer-death" target="_blank">
-          Read the full article on The Guardian
-        </a>
-      </p>
-    </div>
+    <!-- Add more .news-box as needed -->
   </div>
 
   <style>
-    .row {
+    /* 🔧 Custom container — no Bootstrap conflicts */
+    .news-container {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      align-items: stretch; /* 🔧 ensures all items align vertically */
+      padding: 0 15px; /* Optional: mimic Bootstrap padding */
+      align-items: stretch; /* Ensures same height rows */
     }
+
     .news-box {
-      flex: 0 0 280px;        /* fixed width */
+      flex: 0 0 280px;
       display: flex;
-      flex-direction: column; /* 🔧 allows stretching the box contents */
+      flex-direction: column;
       justify-content: space-between;
       background-color: #f8e8e8;
       padding: 20px;
@@ -804,7 +775,7 @@
     }
 
     .news-box h3 {
-      color: #e4dfdf;
+      color: #0e0d0d;
       font-weight: bold;
       font-size: 16px;
       margin-bottom: 10px;
