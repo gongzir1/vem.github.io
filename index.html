@@ -935,8 +935,43 @@
             Specifically, three vulnerabilities are exploited to achieve this type of attack: (i) manipulation of LLMs within robotic systems, (ii) misalignment between linguistic outputs and physical actions, and
             (iii) unintentional hazardous behaviors caused by world knowledge's flaws. Furthermore, we construct a benchmark of various malicious physical action queries to evaluate BadRobot's attack performance. Based on this benchmark, extensive experiments against existing prominent embodied LLM frameworks (e.g., Voxposer, Code as Policies, and ProgPrompt) demonstrate the effectiveness of our BadRobot.
         </div>
+        <style>
+            .image-hover-container {
+              position: relative;
+              width: 80%;
+              margin: auto;
+              padding-top: 1em;
+            }
+          
+            .image-hover-container img {
+              width: 100%;
+              display: block;
+            }
+          
+            .hover-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              background-color: rgba(0, 0, 0, 0.4); /* translucent black */
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 1.5em;
+              text-align: center;
+            }
+          
+            .image-hover-container:hover .hover-overlay {
+              opacity: 1;
+            }
+          </style>
         <center>
-          <img src="fl_vs_frl.png" class="img-responsive" alt="overview" width="100%"
+        <div class="image-hover-container">
+          <img src="fl_vs_frl.png" class="img-responsive" alt="overview" width="80%"
             style="margin:auto;padding-top: 1em">
           <figcaption> <p class="text-justify">
 <!--              以下是caption-->
@@ -947,6 +982,7 @@
               <strong><span class="blue-text">(c):</span></strong> conceptual deception inducing unrecognized harmful behaviors.
              </p>
           </figcaption>
+        </div>
         </center>
       </div>
     </div>
