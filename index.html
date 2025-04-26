@@ -905,15 +905,17 @@
                       <li>
                           <p> <b>Federated Rank Learning (FRL) </b>  is a promising FL training framework, designed to address communication bottlenecks and improve system robustness against poisoning attacks. </P>
                           <P><b>How it works?</b></P>
-                          <p>It expands the LTH hypothesis to the federated learning framework, where clients work collaboratively to select a \textit{subnetwork} that maintains high performance as the original fully trained \textit{supernetwork}.
-                          Specifically, FRL consists of the following three steps: 
+                          <p>It expands the LTH hypothesis to the federated learning framework, where clients work collaboratively to select a subnetwork that maintains high performance as the original fully trained supernetwork.
+                          Specifically, FRL consists of the following three steps: </p>
                           
-                          \textbf{Server Initialization:}
-                          In the first round, the server chooses a seed to generate random weights $\theta^w$ and scores $\theta^s$ for each edge in the global \textit{supernetwork}; (Note that in the subsequent training, only the scores $\theta^s$ are updated.)
-                          Then, it sorts the scores $\theta^s$ in ascending order to get the corresponding global ranking $R_g$, where each value represents edge ID and the index indicates the edge's \textit{reputation} (with higher indices denoting greater importance). Finally, the server sends the global ranking $R_g$ to the selected $U$ clients.
+                          <p><b>Server Initialization:</p></b>
+                          
+                          <p>In the first round, the server chooses a seed to generate random weights $\theta^w$ and scores $\theta^s$ for each edge in the global \textit{supernetwork}; (Note that in the subsequent training, only the scores $\theta^s$ are updated.)
+                          Then, it sorts the scores $\theta^s$ in ascending order to get the corresponding global ranking $R_g$, where each value represents edge ID and the index indicates the edge's \textit{reputation} (with higher indices denoting greater importance). Finally, the server sends the global ranking $R_g$ to the selected $U$ clients.</p>
                           
                           
-                          \textbf{Client Training:} Upon receiving the weights $\theta^w$ and scores $\theta^s$,
+                          <p><b>Client Training: </b></p>
+                          Upon receiving the weights $\theta^w$ and scores $\theta^s$,
                           %On the client side, 
                           the client uses the edge-popup (EP) algorithm to update the score $\theta^s$ for each edge, such that if having an edge $e$ selected for the \textit{subnetwork} reduces the training loss (e.g., cross-entropy loss), the score of edge $e$ increases.
                           Then, clients sort the updated score and send the updated rankings back to the server for aggregation. 
