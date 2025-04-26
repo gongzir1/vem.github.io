@@ -898,12 +898,46 @@
               font-size: 1.2em;
               border-radius: 0 4px 4px 0;
               box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-              📚 Background  
+              📚 Problem Statement  
              </h3>
 
               <ul>
                       <li>
-                          <p> <b>Federated Rank Learning (FRL) </b> </p>
+                          <p> <b>Federated Rank Learning (FRL) </b> </p> is a promising FL training framework, designed to address communication bottlenecks and improve system robustness against poisoning attacks. </P>
+                          <P><b>How it works?</b> expands the LTH hypothesis to the federated learning framework, where clients work collaboratively to select a \textit{subnetwork} that maintains high performance as the original fully trained \textit{supernetwork}.
+                          Specifically, FRL consists of the following three steps: 
+                          
+                          \textbf{Server Initialization:}
+                          In the first round, the server chooses a seed to generate random weights $\theta^w$ and scores $\theta^s$ for each edge in the global \textit{supernetwork}; (Note that in the subsequent training, only the scores $\theta^s$ are updated.)
+                          Then, it sorts the scores $\theta^s$ in ascending order to get the corresponding global ranking $R_g$, where each value represents edge ID and the index indicates the edge's \textit{reputation} (with higher indices denoting greater importance). Finally, the server sends the global ranking $R_g$ to the selected $U$ clients.
+                          
+                          
+                          \textbf{Client Training:} Upon receiving the weights $\theta^w$ and scores $\theta^s$,
+                          %On the client side, 
+                          the client uses the edge-popup (EP) algorithm to update the score $\theta^s$ for each edge, such that if having an edge $e$ selected for the \textit{subnetwork} reduces the training loss (e.g., cross-entropy loss), the score of edge $e$ increases.
+                          Then, clients sort the updated score and send the updated rankings back to the server for aggregation. 
+                          
+                          \textbf{Server Aggregation:} The server receives the local updates $R_u$ for $u \in [1, U]$ and performs majority voting (MV) to get the aggregated global ranking.
+                          Specifically, the server first aligns the \textit{reputation} scores across users by sorting them based on edge IDs.
+                          After alignment, the server performs a dimension-wise summation of these sorted \textit{reputation} to compute the \textit{aggregated reputation} for each edge. Then, the server sorts these \textit{aggregated reputation} scores in ascending order to generate the final ranking of edge IDs.
+                          For instance, if a client's ranking is $R_u=[3, 4, 5, 1, 6, 2]$, where edge $e_3$ is the least important edge (in the first index) and $e_2$ is the most important edge (in the last index), the server assigns \textit{reputation} scores $I_u = [4, 6, 1, 2, 3, 5]$ based on their indices in $R_u$. The server then sums these scores across all users to obtain the \textit{aggregated reputation}, i.e., $W=\sum_{u=1}^{U}I_u$. 
+                          Finally, the server sorts the \textit{aggregated reputation} in ascending order and maps them to their corresponding edge IDs, producing the global ranking $R_g$.
+                          This global ranking can then be transformed into a supermask $\textbf{M}$ (a binary mask of 1s and 0s), which is applied to the random neural network (the \textit{supernetwork}) to generate the final \textit{subnetwork}. 
+                          
+                          In summary, the objective of FRL is to find a global ranking $R_g$, such that the resulting \textit{subnetwork} $\theta^w \odot \textbf{M}$ minimizes the average loss of all clients. Formally, we have
+                          \begin{equation}
+                          \begin{alignedat}{2}
+                          & \min_{R_g} F(\theta^w, R_g) = \min_{R_g} \sum_{u=1}^U{\lambda_u \mathcal{L}_u(\theta^w \odot \textbf{M})}, \\
+                          &\text{s.t. } \
+                          \textbf{M}[R_g[i]] = \left\{ \, \begin{IEEEeqnarraybox}[][c]{l?s} \IEEEstrut 0 & if  $i< t$ , \\ 1 &  otherwise, \IEEEstrut \end{IEEEeqnarraybox} \right. \label{eq:example_left_right1} 
+                          \end{alignedat}
+                          \end{equation}
+                          % \begin{equation}
+                          % \textbf{M}[R_g[i]] = \left\{ \, \begin{IEEEeqnarraybox}[][c]{l?s} \IEEEstrut 0 & if  $i< \psi$ , \\ 1 & if $i \geq \psi$. \IEEEstrut \end{IEEEeqnarraybox} \right. \label{eq:example_left_right1} \end{equation}
+                          where $U$ denotes the number of clients selected for the current iteration and $\theta^w$ represents the global weight.
+                          $\mathcal{L}_u$ and $\lambda_u$ represent the loss function and the weight for the $u^{th}$ client, respectively, and $t = \left\lfloor n \left(1 - k/100\right) \right\rfloor$ is the index of the selection boundary for the \textit{subnetwork},  with  $k$ indicates the sparsity of the \textit{subnetwork} (i.e., the top $k\%$ of edges are selected for the \textit{subnetwork}) and $n$ is the number of edges in each layer.</P> 
+                          <p><b>Why is it robust against client-side poisoning attacks? </b> 1) Discrete update narrows the potential space for malicious updates from an infinite range to n!, effectively bounding the adversary’s damage within a defined budget. 2) Discrete updates also make existing optimization-based model poisoning attacks inapplicable directly. 3) It utilizes majority voting to determine the global ranking. This approach prevents malicious clients from making significant adversarial modifications to the global model, as each client only has a single vote. </p>
+                          
                       </li>
               </ul>
               <style>
