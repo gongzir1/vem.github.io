@@ -913,9 +913,12 @@
                           
                           <p><b>Server Initialization:</p></b>
                           
-                          <p>In the first round, the server chooses a seed to generate random weights $\theta^w$ and scores $\theta^s$ for each edge in the global \textit{supernetwork}; (Note that in the subsequent training, only the scores $\theta^s$ are updated.)
-                          Then, it sorts the scores $\theta^s$ in ascending order to get the corresponding global ranking $R_g$, where each value represents edge ID and the index indicates the edge's \textit{reputation} (with higher indices denoting greater importance). Finally, the server sends the global ranking $R_g$ to the selected $U$ clients.</p>
-                          
+                          <p>
+                            In the first round, the server chooses a seed to generate random weights \( \theta^w \) and scores \( \theta^s \) for each edge in the global <i>supernetwork</i>; (Note that in the subsequent training, only the scores \( \theta^s \) are updated.)
+                            Then, it sorts the scores \( \theta^s \) in ascending order to get the corresponding global ranking \( R_g \), where each value represents edge ID and the index indicates the edge's <i>reputation</i> (with higher indices denoting greater importance).
+                            Finally, the server sends the global ranking \( R_g \) to the selected \( U \) clients.
+                            </p>
+                            
                           
                           <p><b>Client Training: </b></p>
                           <p>
