@@ -957,6 +957,16 @@
                             \end{aligned}
                             \]
                             where: \( U \) denotes the number of clients selected for the current iteration, \( \theta^w \) represents the global weights, \( \mathcal{L}_u \) and \( \lambda_u \) represent the loss function and the weight for the \( u^{\text{th}} \) client, respectively, \( t = \left\lfloor n \left(1 - \frac{k}{100}\right) \right\rfloor \) is the index of the selection boundary for the subnetwork, \( k \) indicates the sparsity of the subnetwork (i.e., top \( k\% \) of edges are selected), and \( n \) is the number of edges in each layer.                                              
+                            <center>
+                              <div class="image-hover-container">
+                                <img src="fl_vs_frl.png" class="img-responsive" alt="overview">
+                                <!-- <figcaption>
+                                  <p class="text-justify">
+                                    Federated Learning vs Federated Ranking Learning
+                                  </p>
+                                </figcaption> -->
+                              </div>
+                            </center>
                             <p><b>Why is it robust against client-side poisoning attacks? </b> 1) Discrete update narrows the potential space for malicious updates from an infinite range to n!, effectively bounding the adversary’s damage within a defined budget. 2) Discrete updates also make existing optimization-based model poisoning attacks inapplicable directly. 3) It utilizes majority voting to determine the global ranking. This approach prevents malicious clients from making significant adversarial modifications to the global model, as each client only has a single vote. </p>
                           
                       </li>
@@ -984,16 +994,7 @@
                 }
                 
               </style>
-              <center>
-                <div class="image-hover-container">
-                  <img src="fl_vs_frl.png" class="img-responsive" alt="overview">
-                  <!-- <figcaption>
-                    <p class="text-justify">
-                      Federated Learning vs Federated Ranking Learning
-                    </p>
-                  </figcaption> -->
-                </div>
-              </center>
+              
 
             
           </div>
