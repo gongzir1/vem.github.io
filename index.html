@@ -926,7 +926,8 @@
                             Then, clients sort the updated scores and send the updated rankings back to the server for aggregation.
                             </p>
                             
-                            <p><b>Server Aggregation:</b> The server receives the local updates \( R_u \) for \( u \in [1, U] \) and performs majority voting (MV) to get the aggregated global ranking.
+                            <p><b>Server Aggregation:</b> 
+                            <p>The server receives the local updates \( R_u \) for \( u \in [1, U] \) and performs majority voting (MV) to get the aggregated global ranking.
                             Specifically, the server first aligns the <i>reputation</i> scores across users by sorting them based on edge IDs.
                             After alignment, the server performs a dimension-wise summation of these sorted <i>reputation</i> scores to compute the <i>aggregated reputation</i> for each edge.
                             Then, the server sorts these <i>aggregated reputation</i> scores in ascending order to generate the final ranking of edge IDs. 
@@ -938,7 +939,7 @@
                             <p>
                             This global ranking can then be transformed into a supermask \( \mathbf{M} \) (a binary mask of 1s and 0s), which is applied to the random neural network (the <i>supernetwork</i>) to generate the final <i>subnetwork</i>.
                             </p>
-                            
+                            </p>
                             <p>
                             In summary, the objective of FRL is to find a global ranking \( R_g \), such that the resulting <i>subnetwork</i> \( \theta^w \odot \mathbf{M} \) minimizes the average loss of all clients. Formally, we have:
                             </p>
