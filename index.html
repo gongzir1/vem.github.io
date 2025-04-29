@@ -929,10 +929,7 @@
                             <p><b>Server Aggregation:</b> The server receives the local updates \( R_u \) for \( u \in [1, U] \) and performs majority voting (MV) to get the aggregated global ranking.
                             Specifically, the server first aligns the <i>reputation</i> scores across users by sorting them based on edge IDs.
                             After alignment, the server performs a dimension-wise summation of these sorted <i>reputation</i> scores to compute the <i>aggregated reputation</i> for each edge.
-                            Then, the server sorts these <i>aggregated reputation</i> scores in ascending order to generate the final ranking of edge IDs.
-                            </p>
-                            
-                            <p>
+                            Then, the server sorts these <i>aggregated reputation</i> scores in ascending order to generate the final ranking of edge IDs. 
                             For instance, if a client's ranking is \( R_u = [3, 4, 5, 1, 6, 2] \), where edge \( e_3 \) is the least important edge (first index) and \( e_2 \) is the most important edge (last index), the server assigns <i>reputation</i> scores \( I_u = [4, 6, 1, 2, 3, 5] \) based on their indices in \( R_u \).
                             The server then sums these scores across all users to obtain the <i>aggregated reputation</i>, i.e., \( W = \sum_{u=1}^{U} I_u \).
                             Finally, the server sorts the <i>aggregated reputation</i> in ascending order and maps them to their corresponding edge IDs, producing the global ranking \( R_g \).
@@ -955,6 +952,7 @@
                             0, & \text{if } i < t, \\
                             1, & \text{otherwise},
                             \end{cases}
+                            \end{aligned}
                             \]
                             where:
                             <ul>
