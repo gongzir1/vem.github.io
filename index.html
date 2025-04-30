@@ -1030,6 +1030,27 @@
            
             <center>
               <div class="image-hover-container" style="width: 100%;";>
+
+                <p>
+                  Our VEM aims to manipulate malicious updates such that the aggregated global model deviates significantly from their original ones at each training round, thus negatively affecting the global model performance.
+                  To effectively achieve this goal and make the FRL framework tackleable, we first provide a formalization of FRL in Section <a href="#sec:formalize">Formalization</a>.
+                  Specifically, we expand the 1D ranking into a 2D matrix to reduce the non-differentiable operations involved in the original algorithm.
+                  </p>
+                  
+                  <p>
+                  Based on the formalization, our attack unfolds in three main stages: vulnerable edge identification, optimization, and malicious update generation (shown in Fig. <a href="#fig:attack">Attack Figure</a>).
+                  In the first stage, the adversary aims to identify vulnerable edges within each layer.
+                  To achieve this, it uses the rankings generated from its own datasets and simulates the majority voting process locally.
+                  After getting the aggregated ranking, it incorporates the global ranking from the previous round to estimate vulnerable edges.
+                  Once identified, the adversary extracts the ranking of those vulnerable edges to form vulnerable matrices (details in Section <a href="#sec:find_vulnerable">Vulnerable Edge Identification</a>).
+                  </p>
+                  
+                  <p>
+                  In the optimization stage, the adversary aims to target those vulnerable edges and form the optimization function such that the global model's <i>reputation</i> of those vulnerable edges deviates significantly from their original values.
+                  To solve the optimization function, we use the Gumbel-Sinkhorn method to convert a discrete problem into a continuous one (details in Section <a href="#sec:optimization">Optimization</a>).
+                  After the optimization process, we use the optimized parameter to generate malicious vulnerable matrices, which are then used to produce malicious updates (details in Section <a href="#sec:generation">Update Generation</a>).
+                  </p>
+                  
                 <img src="overall.png" class="img-responsive" alt="overview">
                 <!-- <figcaption>
                   <p class="text-justify">
